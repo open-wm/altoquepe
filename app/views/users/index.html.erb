@@ -1,12 +1,14 @@
 <p style="color: green"><%= notice %></p>
 
-<h1 class="text-3xl">Users</h1>
+<h1 class="text-3xl font-bold">Users</h1>
 
-<div id="users">
+<div id="users" class="mt-4">
   <% @users.each do |user| %>
+  <div class="bg-gray-200 border border-gray-400 p-4">
     <%= render user %>
+      <%= link_to "Show this user", user, class: "bg-blue-600 text-white px-2 py-1 rounde-md mt-2" %>
+    </div>
     <p>
-      <%= link_to "Show this user", user %>
     </p>
   <% end %>
 </div>
