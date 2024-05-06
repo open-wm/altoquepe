@@ -1,0 +1,17 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  email: MyString
+  phone: MyString
+  name: MyString
+  balance_in_cents: 1
+  date_of_birth: 2024-05-06
+  last_transaction: 2024-05-06 17:24:43
+
+two:
+  email: MyString
+  phone: MyString
+  name: MyString
+  balance_in_cents: 1
+  date_of_birth: 2024-05-06
+  last_transaction: 2024-05-06 17:24:43
