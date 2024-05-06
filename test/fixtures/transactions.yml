@@ -1,0 +1,13 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  amount_in_cents: 1
+  transaction_number: MyString
+  sender: one
+  receiver: one
+
+two:
+  amount_in_cents: 1
+  transaction_number: MyString
+  sender: two
+  receiver: two
