@@ -3,22 +3,25 @@
 This README would normally document whatever steps are necessary to get the
 application up and running.
 
-Things you may want to cover:
 
-* Ruby version
+Ruby v3.2.0
 
-* System dependencies
+```
+ruby --version
+```
 
-* Configuration
+## Get started
+```bash
+git clone https://github.com/open-wm/altoquepe.git
+cd altoquepe
+asdf local ruby 3.2.0
+bundle install
+bun install
+rails db:migrate
+```
 
-* Database creation
+## Run the dev server
 
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+```bash
+bin/dev
+```
