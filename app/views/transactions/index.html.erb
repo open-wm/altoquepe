@@ -1,9 +1,13 @@
-<nav>
+<nav class="max-w-screen-xl mx-auto pt-10 border-b border-gray-600">
+	<% if User.first.present? %>
 	<div class="bg-gray-300 border border-gray-400 px-2 py-2 text-3xl">
 		S/ <%= User.first.balance_in_cents / 100 %>
+		<%= image_tag("tato.jpg", size: "100x100") %>
 	</div>
+	<% else %>
+	<%= link_to "Nuevo usuario", new_user_path, class:"bg-gray-200 rounded-md" %>
+	<% end %>
 
-<%= image_tag("tato.jpg", size: "160x160") %>
 	</nav>
 <main class="max-w-screen-xl mx-auto pt-32">	
 	<div class="flex justify-between">
