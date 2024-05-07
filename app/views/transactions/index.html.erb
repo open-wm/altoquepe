@@ -1,3 +1,23 @@
-Transacciones!
-
-hola!
+<nav>
+	<div class="bg-gray-300 border border-gray-400 px-2 py-2 text-3xl">
+		S/ <%= User.first.balance_in_cents / 100 %>
+	</div>
+	</nav>
+<main class="max-w-screen-xl mx-auto pt-32">	
+	<div class="flex justify-between">
+	<h1 class="text-xl font-bold"> Transacciones! </h1>
+	<%= link_to "Nueva tx", new_transaction_path, class: "bg-orange-600 text-white rounded-md px-2 py-2 block" %>
+</div>
+<table>
+	<% @transactions.each do |tx| %>
+	<tr class="border-b border-gray-200">
+		<td class="px-2 py-2"> <%= tx.description %> </td>
+		<td class="px-2 py-2"> <%= tx.amount_in_cents / 100 %> </td>
+		<td class="px-2 py-2"> <%= tx.sender.email %> </td>
+		<td class="px-2 py-2"> <%= tx.receiver.email %> </td>
+		<td class="px-2 py-2"> <%= tx.created_at.strftime("a %I:%M%p") %> </td>
+	</tr>
+	<% end %>
+	
+</table>
+</main>

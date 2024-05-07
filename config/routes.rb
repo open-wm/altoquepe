@@ -7,6 +7,7 @@ Rails.application.routes.draw do
   get "up" => "rails/health#show", as: :rails_health_check
 
   root "transactions#index" # get "/" => "transaction#index" # lo mismo
-  get "/nueva" => "transactions#new"
+  post "/transactions" => "transactions#create", as: "transactions"
+  get "/nueva" => "transactions#new", as: "new_transaction"
   get "/grats" => "transactions#success"
 end

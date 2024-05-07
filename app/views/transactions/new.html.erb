@@ -1,1 +1,43 @@
-Envia una nueva transaccion
+
+<main class=" bg-gray-200 min-h-screen">	
+	<section class="max-w-screen-xl mx-auto flex items-center justify-center min-h-screen">
+	<div class="bg-white border border-gray-200 px-5 py-4 shadow-md w-1/2">
+	<h1 class="text-3xl font-bold">
+		Nueva transaccion
+	</h1>
+<%= form_with(model: @transaction) do |form| %>
+  <% if @transaction.errors.any? %>
+    <div style="color: red">
+      <h2><%= pluralize(@transaction.errors.count, "error") %> prohibited this transaction from being saved:</h2>
+
+      <ul>
+        <% @transaction.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div>
+	<!-- Cambiar a lista de usuarios -->
+    <%= form.label :email, class: "block font-bold uppercase" %>
+	 <%= collection_select(:transaction, :receiver, User.all, :email, :email) %>
+  </div>
+
+  <div>
+    <%= form.label :amount, style: "display: block" %>
+    <%= form.number_field :amount, min: 0, class: "w-full bg-gray-200 border border-gray-200 rounded-md text-center text-4xl py-10" %>
+  </div>
+
+  <div>
+    <%= form.label :description, style: "display: block" %>
+    <%= form.text_field :description,  class: "py-2 px-2 w-full bg-gray-200 border border-gray-200 rounded-md" %>
+  </div>
+
+  <div class="mt-4">
+    <%= form.submit class:"w-full bg-orange-700 rounde-md text-white px-2 py-1" %>
+  </div>
+<% end %>
+	</div>
+</section>
+</main>

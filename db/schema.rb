@@ -14,6 +14,7 @@ ActiveRecord::Schema[7.1].define(version: 2024_05_06_224451) do
   create_table "transactions", force: :cascade do |t|
     t.integer "amount_in_cents"
     t.string "transaction_number"
+    t.string "description"
     t.integer "sender_id", null: false
     t.integer "receiver_id", null: false
     t.datetime "created_at", null: false
@@ -33,6 +34,6 @@ ActiveRecord::Schema[7.1].define(version: 2024_05_06_224451) do
     t.datetime "updated_at", null: false
   end
 
-  add_foreign_key "transactions", "receivers"
-  add_foreign_key "transactions", "senders"
+  add_foreign_key "transactions", "users", column: "receiver_id"
+  add_foreign_key "transactions", "users", column: "sender_id"
 end
